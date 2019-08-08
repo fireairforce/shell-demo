@@ -5,8 +5,9 @@ while true
 do
     # 接收到用户的一个输入
     read -p "pls input a positive number: " num
-    expr $num + 1 &> /dev/null
     # 将运算的结果直接放到垃圾桶里面去
+    expr $num + 1 &> /dev/null
+    # 如果上面命令执行的结果是个正整数(即 $? 的值为0)
     if [ $? -eq 0 ]; then 
         # 如果这个整数也大于0(结果为1则判断成功)
       if [ `expr $num \> 0` -eq 1 ];then
